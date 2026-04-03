@@ -35,7 +35,6 @@ const Reservation = () => {
 
   const validateEmail = (email) => String(email).toLowerCase().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
   
-  // Validation globale corrigée
   const isFormValid = organizer.societe.trim().length > 1 && 
                      organizer.nom.trim().length > 1 && 
                      isCitySelected && 
@@ -43,16 +42,12 @@ const Reservation = () => {
 
   const searchCity = async (query) => {
     setOrganizer({ ...organizer, ville: query });
-    
-    // Si l'utilisateur tape, on considère que la ville n'est plus "validée par l'API"
     setIsCitySelected(false); 
-    
     if (query.length < 3) {
       setCitySuggestions([]);
       setShowSuggestions(false);
       return;
     }
-
     setIsSearchingCity(true);
     try {
       const response = await fetch(`https://geo.api.gouv.fr/communes?nom=${encodeURIComponent(query)}&limit=5`);
@@ -102,10 +97,8 @@ const Reservation = () => {
             <BadgeCheck size={48} className="md:w-14 md:h-14" />
           </div>
           <h1 className="text-2xl md:text-4xl font-bold text-slate-950 font-serif italic">Dossier transmis</h1>
-          <div className="bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 shadow-2xl text-left space-y-4 md:space-y-6">
-            <p className="text-slate-500 text-sm md:text-base leading-relaxed text-center">Félicitations <strong>{organizer.nom}</strong>. Votre demande pour <strong>{organizer.societe}</strong> est en cours d'analyse.</p>
-          </div>
-          <button onClick={() => window.location.href = '/'} className="w-full md:w-auto px-12 py-4 bg-slate-950 text-white rounded-full font-black uppercase tracking-[0.2em] text-[10px] hover:bg-primary transition-all">Retour Accueil</button>
+          <p className="text-slate-500">Votre demande est en cours d'analyse par nos services.</p>
+          <button onClick={() => window.location.href = '/'} className="px-12 py-4 bg-slate-950 text-white rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-primary transition-all">Retour Accueil</button>
         </div>
       </div>
     );
@@ -116,8 +109,8 @@ const Reservation = () => {
       <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
         
         {/* --- HEADER --- */}
-        <header className="flex flex-col lg:flex-row justify-between items-center gap-6 md:gap-8 border-b border-slate-200 pb-8 md:pb-12 text-center lg:text-left">
-          <div className="space-y-2 md:space-y-3">
+        <header className="flex flex-col lg:flex-row justify-between items-center gap-6 border-b border-slate-200 pb-8 md:pb-12 text-center lg:text-left">
+          <div className="space-y-2">
             <h1 className="text-3xl md:text-6xl font-bold font-serif italic text-slate-950 tracking-tight">Réservation</h1>
             <p className="text-slate-400 text-sm md:text-lg font-light">Suivez les étapes pour constituer votre dossier de formation.</p>
           </div>
@@ -148,22 +141,22 @@ const Reservation = () => {
         </div>
 
         <main className="max-w-7xl mx-auto">
-          {/* ÉTAPE 1 */}
+          {/* ÉTAPE 1 : CALENDRIER + LÉGENDES */}
           {step === 1 && (
             <div className="space-y-6 md:space-y-8 animate-in fade-in duration-700">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <div className="bg-blue-50 border border-blue-100 p-4 rounded-2xl flex items-start gap-3 text-blue-800">
-                    <HelpCircle size={20} className="shrink-0 mt-0.5" />
+                 <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl flex items-start gap-3">
+                    <HelpCircle size={20} className="text-primary shrink-0 mt-0.5" />
                     <div>
-                       <p className="text-[11px] font-bold uppercase">Comment réserver ?</p>
-                       <p className="text-xs italic">Sélectionnez les créneaux pour atteindre <strong>21 heures</strong>.</p>
+                       <p className="text-[11px] font-bold text-blue-900 uppercase tracking-wider">Comment réserver ?</p>
+                       <p className="text-xs text-blue-700 mt-1 italic">Sélectionnez plusieurs créneaux pour atteindre exactement <strong>21 heures</strong> de formation.</p>
                     </div>
                  </div>
-                 <div className="bg-amber-50 border border-amber-100 p-4 rounded-2xl flex items-start gap-3 text-amber-800">
-                    <Info size={20} className="shrink-0 mt-0.5" />
+                 <div className="bg-amber-50/50 border border-amber-100 p-4 rounded-2xl flex items-start gap-3">
+                    <Info size={20} className="text-amber-600 shrink-0 mt-0.5" />
                     <div>
-                       <p className="text-[11px] font-bold uppercase">Quotas</p>
-                       <p className="text-xs italic">Le quorum de 12 personnes est nécessaire pour maintenir une session.</p>
+                       <p className="text-[11px] font-bold text-amber-900 uppercase tracking-wider">Validation des quotas</p>
+                       <p className="text-xs text-amber-700 mt-1 italic">Une session est maintenue lorsqu'elle cumule <strong>12 participants</strong> (toutes entreprises confondues).</p>
                     </div>
                  </div>
               </div>
@@ -172,20 +165,39 @@ const Reservation = () => {
                  <BookingCalendar selectedSlots={selectedSlots} setSelectedSlots={setSelectedSlots} hoursGoal={hoursGoal} />
               </div>
               
-              <div className="flex justify-center md:justify-end">
-                  <button onClick={() => setStep(2)} disabled={currentHours !== hoursGoal} className={`w-full md:w-auto px-12 py-4 rounded-xl font-black uppercase text-[10px] transition-all ${currentHours === hoursGoal ? 'bg-primary text-white hover:scale-105 shadow-xl' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 bg-slate-900 p-6 rounded-[2rem]">
+                  <div className="flex items-center gap-4">
+                      <div className={`h-12 w-12 rounded-full border-4 flex items-center justify-center font-black text-xs ${currentHours === hoursGoal ? 'border-emerald-500 text-emerald-500' : 'border-slate-700 text-slate-400'}`}>
+                         {Math.round((currentHours/hoursGoal)*100)}%
+                      </div>
+                      <div>
+                         <p className="text-white font-bold text-sm">{currentHours}h sélectionnées</p>
+                         <p className="text-slate-400 text-[10px] uppercase italic">Objectif : {hoursGoal}h</p>
+                      </div>
+                  </div>
+                  <button onClick={() => setStep(2)} disabled={currentHours !== hoursGoal} className={`w-full md:w-auto px-12 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all ${currentHours === hoursGoal ? 'bg-primary text-white hover:scale-105 shadow-xl' : 'bg-slate-800 text-slate-600 cursor-not-allowed'}`}>
                     Suivant <ArrowRight size={14} className="inline ml-2" />
                   </button>
               </div>
             </div>
           )}
 
-          {/* ÉTAPE 2 */}
+          {/* ÉTAPE 2 : PARTICIPANTS + AIDE */}
           {step === 2 && (
             <div className="max-w-5xl mx-auto space-y-6 animate-in slide-in-from-right-10 duration-700">
-              <button onClick={() => setStep(1)} className="flex items-center gap-2 text-slate-400 hover:text-primary font-bold text-xs uppercase tracking-widest">
+              <button onClick={() => setStep(1)} className="flex items-center gap-2 text-slate-400 hover:text-primary font-bold text-xs uppercase tracking-widest transition-all">
                 <ArrowLeft size={16} /> Retour au calendrier
               </button>
+
+              <div className="bg-indigo-50/50 border border-indigo-100 p-6 rounded-[2rem] flex items-center gap-4 shadow-sm">
+                  <div className="h-10 w-10 bg-indigo-500 text-white rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-indigo-100">
+                     <Users size={20} />
+                  </div>
+                  <div>
+                     <p className="text-xs font-bold text-indigo-900 uppercase">Identité des candidats</p>
+                     <p className="text-[11px] text-indigo-700 italic leading-relaxed">Veuillez renseigner les informations de chaque participant. Le <strong>numéro de permis</strong> est obligatoire pour la validité administrative du dossier.</p>
+                  </div>
+              </div>
 
               <div className="bg-white rounded-[2rem] md:rounded-[3rem] p-5 border border-slate-100 shadow-2xl">
                  <ParticipantSelector participants={participants} setParticipants={setParticipants} />
@@ -199,50 +211,50 @@ const Reservation = () => {
             </div>
           )}
 
-          {/* ÉTAPE 3 */}
+          {/* ÉTAPE 3 : RESPONSABLE + SÉCURITÉ VILLE */}
           {step === 3 && (
             <div className="max-w-3xl mx-auto space-y-6 animate-in slide-in-from-right-10 duration-700">
-              <button onClick={() => setStep(2)} className="flex items-center gap-2 text-slate-400 hover:text-primary font-bold text-xs uppercase tracking-widest">
+              <button onClick={() => setStep(2)} className="flex items-center gap-2 text-slate-400 hover:text-primary font-bold text-xs uppercase tracking-widest transition-all">
                 <ArrowLeft size={16} /> Retour aux participants
               </button>
 
               <div className="bg-white rounded-[2rem] md:rounded-[3.5rem] p-6 md:p-16 border border-slate-100 shadow-2xl space-y-8">
                 <div className="text-center md:text-left">
-                  <h2 className="text-2xl md:text-3xl font-bold font-serif italic text-slate-950 tracking-tight">Responsable</h2>
-                  <p className="text-slate-400 text-xs mt-2 flex items-center justify-center md:justify-start gap-2 italic">
-                     <Lock size={12} /> Informations confidentielles pour votre convention.
+                  <h2 className="text-2xl md:text-3xl font-bold font-serif italic text-slate-950 tracking-tight">Coordonnées Responsable</h2>
+                  <p className="text-slate-400 text-xs mt-2 italic flex items-center justify-center md:justify-start gap-2">
+                     <Lock size={12} /> Informations strictement confidentielles pour votre convention.
                   </p>
                 </div>
 
                 {submitError && (
                   <div className="bg-red-50 border border-red-100 p-4 rounded-xl flex items-center gap-3 text-red-600 animate-pulse">
                     <AlertTriangle size={18} className="shrink-0" />
-                    <p className="text-[10px] font-black uppercase">{submitError}</p>
+                    <p className="text-[10px] font-black uppercase tracking-tight">{submitError}</p>
                   </div>
                 )}
 
                 <div className="grid grid-cols-1 gap-6">
                   {/* SOCIÉTÉ */}
                   <div className="space-y-2">
-                    <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Entreprise *</label>
+                    <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Nom de l'entreprise *</label>
                     <div className="relative">
                       <Building2 size={18} className={`absolute left-5 top-1/2 -translate-y-1/2 ${organizer.societe ? 'text-primary' : 'text-slate-300'}`} />
-                      <input required className="w-full bg-slate-50 border-none rounded-xl md:rounded-2xl pl-12 pr-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="Ex: SARL Transport" value={organizer.societe} onChange={(e) => setOrganizer({...organizer, societe: e.target.value})} />
+                      <input required className="w-full bg-slate-50 border-none rounded-xl md:rounded-2xl pl-12 pr-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="Ex: SARL Transport Logistique" value={organizer.societe} onChange={(e) => setOrganizer({...organizer, societe: e.target.value})} />
                     </div>
                   </div>
 
-                  {/* VILLE - CORRIGÉ */}
+                  {/* VILLE AVEC CORRECTIF onMouseDown */}
                   <div className="space-y-2 relative">
                     <label className="text-[9px] font-black uppercase text-slate-400 ml-2 flex justify-between">
-                      <span>Ville *</span>
-                      {/* Le message disparait dès que isCitySelected est vrai */}
-                      {!isCitySelected && organizer.ville.length >= 2 && <span className="text-orange-500 animate-pulse">Choisir dans la liste</span>}
+                      <span>Ville d'implantation *</span>
+                      {!isCitySelected && organizer.ville.length >= 2 && <span className="text-orange-500 font-bold animate-pulse">Sélection obligatoire</span>}
                     </label>
                     <div className="relative">
                       <MapPin size={18} className={`absolute left-5 top-1/2 -translate-y-1/2 z-10 ${isCitySelected ? 'text-emerald-500' : 'text-slate-300'}`} />
                       <input 
                         required 
-                        className={`w-full bg-slate-50 border-none rounded-xl md:rounded-2xl pl-12 pr-6 py-4 outline-none text-sm font-bold transition-all ${isCitySelected ? 'ring-2 ring-emerald-500/20 shadow-inner' : 'focus:ring-2 ring-primary/20'}`} 
+                        autoComplete="off"
+                        className={`w-full bg-slate-50 border-none rounded-xl md:rounded-2xl pl-12 pr-6 py-4 outline-none text-sm font-bold transition-all ${isCitySelected ? 'ring-2 ring-emerald-500/20 bg-emerald-50/10' : 'focus:ring-2 ring-primary/20'}`} 
                         placeholder="Cherchez votre commune..." 
                         value={organizer.ville} 
                         onChange={(e) => searchCity(e.target.value)} 
@@ -258,9 +270,10 @@ const Reservation = () => {
                             <button
                               key={index}
                               type="button"
-                              onClick={() => {
+                              onMouseDown={(e) => {
+                                e.preventDefault(); // Indispensable pour capter le clic avant le Blur
                                 setOrganizer({ ...organizer, ville: city.nom });
-                                setIsCitySelected(true); // <--- INDISPENSABLE POUR DÉBLOQUER
+                                setIsCitySelected(true);
                                 setShowSuggestions(false);
                                 setSubmitError(null);
                               }}
@@ -273,21 +286,22 @@ const Reservation = () => {
                         </div>
                       )}
                     </div>
+                    <p className="text-[9px] text-slate-400 ml-2 mt-1 italic leading-relaxed">L'API Géo assure la validité de l'adresse pour l'édition de votre convention officielle.</p>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Responsable *</label>
-                    <input required className="w-full bg-slate-50 border-none rounded-xl px-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="NOM Prénom" value={organizer.nom} onChange={(e) => setOrganizer({...organizer, nom: e.target.value})} />
+                    <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Responsable de formation *</label>
+                    <input required className="w-full bg-slate-50 border-none rounded-xl px-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="Prénom et NOM" value={organizer.nom} onChange={(e) => setOrganizer({...organizer, nom: e.target.value})} />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Email *</label>
+                      <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Email Professionnel *</label>
                       <input type="email" required className="w-full bg-slate-50 border-none rounded-xl px-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="direction@entreprise.fr" value={organizer.email} onChange={(e) => setOrganizer({...organizer, email: e.target.value})} />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Tél.</label>
-                      <input className="w-full bg-slate-50 border-none rounded-xl px-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="06..." value={organizer.telephone} onChange={(e) => setOrganizer({...organizer, telephone: e.target.value})} />
+                      <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Téléphone direct</label>
+                      <input className="w-full bg-slate-50 border-none rounded-xl px-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="06 XX XX XX XX" value={organizer.telephone} onChange={(e) => setOrganizer({...organizer, telephone: e.target.value})} />
                     </div>
                   </div>
                 </div>
@@ -296,7 +310,7 @@ const Reservation = () => {
                   <button 
                     onClick={handleFinalSubmit}
                     disabled={!isFormValid || isSubmitting}
-                    className={`w-full py-5 rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] transition-all shadow-2xl flex justify-center items-center gap-3 ${isFormValid && !isSubmitting ? 'bg-primary text-white hover:bg-slate-950 scale-[1.02]' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}
+                    className={`w-full py-5 rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] md:text-[11px] transition-all shadow-2xl flex justify-center items-center gap-3 ${isFormValid && !isSubmitting ? 'bg-primary text-white hover:bg-slate-950 scale-[1.02]' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}
                   >
                     {isSubmitting ? <Loader2 className="animate-spin" size={16} /> : "Finaliser ma demande"}
                   </button>
