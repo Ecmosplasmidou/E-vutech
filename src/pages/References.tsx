@@ -130,7 +130,7 @@ const References = () => {
                 Besoin d'un <br /> <span className="text-primary not-italic">conseil expert ?</span>
               </h2>
               <p className="text-slate-400 text-lg font-light">
-                Nos conseillers vous accompagnent dans le montage de vos dossiers de financement et le respect de vos obligations légales.
+                Nos conseillers vous accompagnent dans le montage de vos dossiers* dans le respect de vos obligations légales.
               </p>
             </div>
             

@@ -87,7 +87,8 @@ const Pedagogie = () => {
 
               <div className="space-y-8">
                 <p className="text-xl text-slate-500 leading-relaxed font-light">
-                  L’ensemble de nos stages repose sur le concept de <span className="text-slate-950 font-semibold border-b-2 border-primary/30">Formation – Action</span>. 
+                  L’ensemble de nos stages repose sur le concept de : <br /> 
+                  <span className="flex justify-center text-slate-950 font-semibold border-b-2 border-primary/30">- Formation – Action</span><br /> 
                   La théorie n'est qu'une boussole, la pratique est le chemin.
                 </p>
                 
@@ -126,8 +127,8 @@ const Pedagogie = () => {
                 <div className="flex gap-10 group/item">
                   <div className="h-16 w-16 rounded-3xl bg-primary text-white flex items-center justify-center font-black text-xl shrink-0 shadow-2xl shadow-primary/30 group-hover/item:bg-slate-950 transition-colors duration-500">2</div>
                   <div>
-                    <h3 className="font-bold text-slate-950 text-2xl mb-3 font-serif italic">Phase d'Action</h3>
-                    <p className="text-slate-500 leading-relaxed font-light">Exercices physiques sur circuit homologué : freinage d'urgence, évitement et transfert de charge.</p>
+                    <h3 className="font-bold text-slate-950 text-2xl mb-3 font-serif italic">Phase Pratique</h3>
+                    <p className="text-slate-500 leading-relaxed font-light">Exercices physiques sur circuit homologué : freinage d'urgence, évitement, transfert de charge...</p>
                   </div>
                 </div>
 
@@ -157,7 +158,7 @@ const Pedagogie = () => {
               Prêt à passer <br /> du savoir à l'action ?
             </h2>
             <p className="text-blue-50 text-xl font-light max-w-2xl mx-auto opacity-90 relative z-10">
-              Découvrez comment nos parcours transforment durablement la sécurité de vos collaborateurs.
+              Découvrez comment nos formations transforment durablement la prise de conscience du risque routier proféssionnel de vos collaborateurs.
             </p>
             
             <Link 

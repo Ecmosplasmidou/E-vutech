@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   AlertTriangle, TrendingUp, ShieldCheck, 
-  Users, Zap, Target, ScrollText 
+  Users, Zap, Target, ScrollText, ArrowUpRight
 } from 'lucide-react';
 
 const APropos = () => {
@@ -47,13 +47,24 @@ const APropos = () => {
               <div className="h-1.5 w-20 bg-primary rounded-full"></div>
             </div>
             <p className="text-slate-500 text-lg leading-relaxed font-light">
-              L'étalement urbain et la mutation des modes de consommation ont transformé nos routes. 
+              L'étalement urbain et la mutation des modes de consommation ont transformé nos routes.
               Aujourd'hui, les flux logistiques dominent : les livreurs, techniciens et artisans sont les nouveaux piliers de l'économie de proximité.
             </p>
             <div className="p-8 bg-primary/5 rounded-[2rem] border border-primary/10 group hover:bg-primary transition-all duration-500">
               <p className="text-slate-700 font-medium italic group-hover:text-white transition-colors">
                 En 2021, le taux d’accidentologie en VUL dépasse de <span className="text-primary text-4xl font-black group-hover:text-white">50%</span> celui des véhicules légers.
               </p>
+            </div>
+            <div className="border-t border-slate-50 group-hover:border-white/10 flex items-center justify-between">
+              <a 
+                href="https://www.info.gouv.fr/upload/media/content/0001/03/3fd7d291435390dbe3705d58f45707edf2881018.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-primary hover:underline transition-all"
+              >
+                Consulter le rapport officiel
+                <ArrowUpRight size={14} />
+              </a>
             </div>
           </div>
 

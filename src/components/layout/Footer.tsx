@@ -21,7 +21,7 @@ const Footer = () => {
             </h2>
             <p className="text-slate-400 text-sm leading-relaxed">
               L’école de la conduite défensive en VUL*. <br />
-              Expertise, sécurité et accompagnement pour les professionnels et particuliers.
+              Expertise en sécurité routiére et accompagnement pour les professionnels, les particuliers et les associations.
             </p>
           </div>
           

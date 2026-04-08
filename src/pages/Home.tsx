@@ -118,12 +118,11 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {id: 'DREETS', val: 'N°76311083431', icon: <Award className="w-6 h-6" />},
               {id: 'DATADOCK', val: 'Référencement actif', icon: <CheckCircle2 className="w-6 h-6" />},
               {id: 'QUALIOPI', val: 'Certification en cours', icon: <TrendingDown className="w-6 h-6" />},
-              {id: 'CPF', val: 'Éligibilité en cours', icon: <Users className="w-6 h-6" />}
             ].map((item, i) => (
               <div key={i} className="group p-10 bg-white/5 rounded-[2.5rem] border border-white/5 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
                 <div className="h-14 w-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">{item.icon}</div>
@@ -144,7 +143,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[
-              {title: "Zéro Accident", desc: "Diminution drastique des sinistres par la prise de conscience.", icon: <Zap />},
+              {title: "Accidentologie", desc: "Diminution drastique des sinistres par la prise de conscience.", icon: <Zap />},
               {title: "Image de Marque", desc: "Un conducteur serein est le meilleur ambassadeur de votre société.", icon: <BarChart3 />},
               {title: "Valeur Humaine", desc: "Renforcer le bien-être au travail via la maîtrise technique.", icon: <Users />}
             ].map((obj, i) => (
