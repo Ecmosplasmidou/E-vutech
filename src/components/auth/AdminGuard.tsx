@@ -4,7 +4,7 @@ const AdminGuard = ({ children }: { children: React.ReactNode }) => {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const ADMIN_CODE = "E-VUETCH-ADMIN-SECRET"; 
+  const ADMIN_CODE = import.meta.env.VITE_ADMIN_CODE; 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
