@@ -94,7 +94,7 @@ const ParticipantSelector = ({ participants, setParticipants, maxParticipants = 
             
             return (
               <div key={index} className="flex flex-col md:flex-row gap-2 md:gap-3 items-stretch md:items-start animate-in slide-in-from-right-4 duration-300">
-                <div className={`flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-5 rounded-[1.5rem] border transition-all ${
+                <div className={`flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-5 rounded-[1.5rem] border transition-all ${
                   isEntryValid 
                   ? 'bg-slate-50 border-slate-100 opacity-80' 
                   : 'bg-white border-primary/20 shadow-sm'
