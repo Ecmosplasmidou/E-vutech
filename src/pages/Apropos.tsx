@@ -55,7 +55,7 @@ const APropos = () => {
                 En 2021, le taux d’accidentologie en VUL dépasse de <span className="text-primary text-4xl font-black group-hover:text-white">50%</span> celui des véhicules légers.
               </p>
             </div>
-            <div className="border-t border-slate-50 group-hover:border-white/10 flex items-center justify-between">
+            <div className="border-t border-slate-50 group-hover:border-white/10 flex items-center justify-between pb-2">
               <a 
                 href="https://www.info.gouv.fr/upload/media/content/0001/03/3fd7d291435390dbe3705d58f45707edf2881018.pdf" 
                 target="_blank" 
