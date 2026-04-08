@@ -12,7 +12,7 @@ const SlotPicker = ({ day, onToggle, selectedSlots, occupancy, limit }) => {
       id: 'matin', 
       labelFull: 'Matin', 
       labelShort: 'M',
-      time: '08:30', 
+      time: '09:00', 
       hours: 3.5,
       isFull: morningCount >= limit,
     },
