@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
-import Home from '../src/pages/Home';
-import Pedagogie from '../src/pages/Pedagogie';
-import Catalogue from '../src/pages/Catalogue';
-import CatalogueList from '../src/pages/CatalogueList';
-import References from '../src/pages/References';
-import Apropos from '../src/pages/Apropos';
-import Contact from '../src/pages/Contact';
-import Reservation from '../src/pages/Reservation';
+import Home from './pages/Home';
+import Pedagogie from './pages/Pedagogie';
+import Catalogue from './pages/Catalogue';
+import CatalogueList from './pages/CatalogueList';
+import References from './pages/References';
+import Apropos from './pages/Apropos';
+import Contact from './pages/Contact';
+import Reservation from './pages/Reservation';
 import AdminReservations from './pages/admin/AdminReservations'; 
 import AdminContacts from './pages/admin/AdminContacts';
 
@@ -24,12 +24,15 @@ import RGPD from './other_pages/RGPD';
 
 import AdminGuard from './components/auth/AdminGuard';
 
+import ScrollToTop from './components/layout/ScrollToTop'
+
 const SECRET_RESERVATION_PATH = import.meta.env.VITE_SECRET_RESERVATION_PATH;
 const SECRET_ADMIN_PATH = import.meta.env.VITE_SECRET_ADMIN_PATH;
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
         <div className="flex-grow">
