@@ -57,10 +57,7 @@ function App() {
 
             {/* --- ROUTES SÉCURISÉES  --- */}
             <Route path={SECRET_RESERVATION_PATH} element={<Reservation />} />
-
-            <Route 
-              path={SECRET_ADMIN_PATH} 
-              element={
+            <Route path={SECRET_ADMIN_PATH} element={
                 <AdminGuard>
                   <AdminContacts />
                   <AdminReservations />

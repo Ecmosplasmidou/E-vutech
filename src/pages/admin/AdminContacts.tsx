@@ -35,7 +35,7 @@ const AdminContacts = () => {
     const result = await Swal.fire({
       title: isTraitee ? 'Valider et envoyer le lien ?' : 'Clôturer la demande ?',
       text: isTraitee 
-        ? "L'utilisateur recevra automatiquement le mail EmailJS avec le lien de réservation." 
+        ? "L'utilisateur recevra automatiquement le mail avec le lien de réservation." 
         : "Le dossier sera clos. Vous pourrez envoyer un mail personnalisé via Gmail.",
       icon: 'question',
       showCancelButton: true,
