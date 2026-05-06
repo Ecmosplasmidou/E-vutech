@@ -4,7 +4,7 @@ import { Eye, EyeOff, Lock } from 'lucide-react'; // Import des icônes
 const AdminGuard = ({ children }: { children: React.ReactNode }) => {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // État pour la visibilité
+  const [showPassword, setShowPassword] = useState(false);
 
   const ADMIN_CODE = import.meta.env.VITE_ADMIN_CODE;
 
