@@ -41,7 +41,6 @@ const CatalogueList = () => {
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans pb-32 selection:bg-primary/20">
       
-      {/* --- HEADER HERO --- */}
       <section className="relative pt-32 pb-44 px-6 text-white text-center overflow-hidden bg-slate-950">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] bg-primary/20 rounded-full blur-[120px]"></div>
@@ -63,10 +62,8 @@ const CatalogueList = () => {
         </div>
       </section>
 
-      {/* --- GRILLE DES FORMATIONS --- */}
       <section className="px-6 -mt-32 relative z-20">
         <div className="max-w-7xl mx-auto">
-          {/* BANDEAU D'INFORMATION RÉSERVATION */}
           <div className="mb-12 bg-white/80 backdrop-blur-md border border-slate-100 p-6 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
              <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/10 text-primary rounded-2xl">
@@ -140,7 +137,6 @@ const CatalogueList = () => {
         </div>
       </section>
 
-      {/* --- SECTION ACTION BAS DE PAGE --- */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto bg-slate-950 rounded-[4rem] p-12 md:p-20 text-white relative overflow-hidden border border-white/5 shadow-2xl">
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 text-center md:text-left">

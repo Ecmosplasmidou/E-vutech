@@ -26,7 +26,6 @@ const AdminReservations = () => {
       const snap = await getDocs(q);
       const rawDocs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 
-      // --- FUSION PAR SOCIÉTÉ & VILLE ---
       const merged = rawDocs.reduce((acc, current) => {
         const societe = current.organizer?.societe?.trim() || "Inconnu";
         const ville = current.organizer?.ville?.trim() || "Non précisée";
@@ -142,7 +141,6 @@ const AdminReservations = () => {
         ) : (
           Object.entries(groupedByCity).map(([city, cityRes]) => (
             <div key={city} className="mb-12">
-              {/* SÉPARATEUR VILLE */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 bg-primary/10 text-primary rounded-2xl shadow-sm">
                   <MapPin size={20} />
@@ -154,7 +152,6 @@ const AdminReservations = () => {
                 </span>
               </div>
 
-              {/* LISTE DES CARTES PAR VILLE */}
               <div className="space-y-4">
                 {cityRes.map(res => {
                   const info = formatSlotsForDisplay(res.selectedSlots);
@@ -226,7 +223,6 @@ const AdminReservations = () => {
           ))
         )}
 
-        {/* MODALE DETAILS */}
         {selectedRes && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in">
             <div className="bg-white w-full max-w-2xl rounded-[3rem] shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">

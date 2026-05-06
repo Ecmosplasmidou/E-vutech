@@ -94,9 +94,7 @@ const BookingCalendar = ({ selectedSlots, setSelectedSlots, hoursGoal }) => {
   };
 
   return (
-    <div className="grid lg:grid-cols-3 gap-8 relative">
-      
-      {/* SYSTÈME DE NOTIFICATION D'ERREUR */}
+    <div className="grid lg:grid-cols-3 gap-8 relative">      
       {error && (
         <div className="fixed top-10 left-1/2 -translate-x-1/2 z-[100] animate-in fade-in slide-in-from-top-5 duration-300">
           <div className="bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-white/10 min-w-[300px]">
@@ -110,8 +108,6 @@ const BookingCalendar = ({ selectedSlots, setSelectedSlots, hoursGoal }) => {
           </div>
         </div>
       )}
-
-      {/* SECTION CALENDRIER */}
       <div className="lg:col-span-2 bg-white rounded-[2.5rem] p-6 md:p-8 border border-slate-100 shadow-sm">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-slate-900 font-serif italic capitalize">
@@ -187,8 +183,6 @@ const BookingCalendar = ({ selectedSlots, setSelectedSlots, hoursGoal }) => {
           </div>
         )}
       </div>
-
-      {/* SECTION RÉSUMÉ */}
       <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white shadow-2xl h-fit sticky top-8">
         <h3 className="flex items-center gap-2 text-primary font-black uppercase text-xs tracking-widest mb-6">
           <Clock size={16} /> Ma Sélection

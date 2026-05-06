@@ -23,7 +23,6 @@ const ReglementInterieur = () => {
 
   return (
     <div className="bg-[#fcfcfd] min-h-screen font-sans pb-20">
-      {/* HEADER AVEC DÉGRADÉ PREMIUM */}
       <section className="relative py-24 px-6 text-white text-center overflow-hidden bg-gradient-to-br from-[#4a86C6] via-[#3b71ab] to-[#2d5a8a]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10">
@@ -44,10 +43,8 @@ const ReglementInterieur = () => {
         </div>
       </section>
 
-      {/* CONTENU DU RÈGLEMENT */}
       <section className="py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Bloc d'introduction législatif */}
           <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100 -mt-16 relative z-20 mb-12">
             <div className="flex items-start gap-6">
               <div className="p-3 bg-primary/10 rounded-2xl">
@@ -63,8 +60,6 @@ const ReglementInterieur = () => {
               </div>
             </div>
           </div>
-
-          {/* Liste des articles en format fiches aérées */}
           <div className="grid grid-cols-1 gap-6">
             {sections.map((section) => (
               <div 
@@ -87,8 +82,6 @@ const ReglementInterieur = () => {
               </div>
             ))}
           </div>
-
-          {/* Note de fin / Application */}
           <div className="mt-16 p-8 bg-slate-900 rounded-[3rem] text-white flex flex-col md:flex-row items-center gap-8 shadow-2xl overflow-hidden relative">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl -mr-16 -mt-16"></div>
             <div className="p-4 bg-white/10 rounded-2xl relative z-10">

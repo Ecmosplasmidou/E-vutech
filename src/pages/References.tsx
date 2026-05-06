@@ -36,7 +36,7 @@ const References = () => {
     {
       title: "Responsabilité Juridique",
       icon: <Scale className="w-8 h-8" />,
-      color: "group-hover:bg-amber-600", // Couleur au hover
+      color: "group-hover:bg-amber-600",
       bgIcon: "bg-amber-50 text-amber-600",
       description: "Textes juridiques encadrant la responsabilité pénale et civile des conducteurs et employeurs.",
       links: [
@@ -52,8 +52,6 @@ const References = () => {
 
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans pb-24 selection:bg-primary/20">
-      
-      {/* --- HEADER HERO --- */}
       <section className="relative pt-32 pb-48 bg-slate-950 text-white overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-full bg-primary/10 -skew-x-12 translate-x-32 blur-[100px] pointer-events-none"></div>
         
@@ -73,14 +71,11 @@ const References = () => {
         </div>
       </section>
 
-      {/* --- GRILLE DE RESSOURCES --- */}
       <section className="px-6 -mt-32 relative z-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sections.map((section, idx) => (
-              <div key={idx} className="group flex flex-col p-10 bg-white rounded-[3rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] hover:-translate-y-3 transition-all duration-500">
-                
-                {/* ICONE AVEC COULEUR DYNAMIQUE AU HOVER */}
+              <div key={idx} className="group flex flex-col p-10 bg-white rounded-[3rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] hover:-translate-y-3 transition-all duration-500">                
                 <div className={`mb-8 p-5 rounded-[1.5rem] w-fit transition-all duration-500 ${section.bgIcon} ${section.color} group-hover:text-white group-hover:rotate-6`}>
                   {section.icon}
                 </div>
@@ -93,7 +88,6 @@ const References = () => {
                   {section.description}
                 </p>
 
-                {/* LISTE DE LIENS INTERACTIFS */}
                 <div className="flex flex-col gap-3 mt-auto">
                   {section.links.map((link, i) => (
                     <a 
@@ -119,7 +113,6 @@ const References = () => {
         </div>
       </section>
 
-      {/* --- CTA FINAL --- */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden bg-slate-950 p-12 md:p-20 rounded-[4rem] text-white flex flex-col lg:flex-row items-center justify-between gap-12 group border border-white/5 shadow-2xl">

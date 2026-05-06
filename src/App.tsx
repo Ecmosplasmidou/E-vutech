@@ -55,7 +55,7 @@ function App() {
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/rgpd" element={<RGPD />} />
 
-            {/* --- ROUTES SÉCURISÉES (ACCÈS COMPLEXE) --- */}
+            {/* --- ROUTES SÉCURISÉES  --- */}
             <Route path={SECRET_RESERVATION_PATH} element={<Reservation />} />
 
             <Route 

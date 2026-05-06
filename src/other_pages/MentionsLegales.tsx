@@ -56,7 +56,6 @@ const MentionsLegales = () => {
   return (
     <div className="bg-[#fcfcfd] min-h-screen font-sans pb-20">
       
-      {/* HEADER DYNAMIQUE */}
       <section className="relative py-24 px-6 text-white text-center overflow-hidden bg-gradient-to-br from-[#4a86C6] via-[#3b71ab] to-[#2d5a8a]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -73,7 +72,6 @@ const MentionsLegales = () => {
         </div>
       </section>
 
-      {/* CONTENU DES MENTIONS */}
       <section className="py-12 px-6 -mt-10 relative z-20">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 gap-6">

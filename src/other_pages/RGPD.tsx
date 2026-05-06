@@ -16,7 +16,6 @@ const RGPD = () => {
   return (
     <div className="bg-[#fcfcfd] min-h-screen font-sans pb-20">
       
-      {/* HEADER DYNAMIQUE */}
       <section className="relative py-24 px-6 text-white text-center overflow-hidden bg-gradient-to-br from-[#4a86C6] via-[#3b71ab] to-[#2d5a8a]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -33,11 +32,8 @@ const RGPD = () => {
         </div>
       </section>
 
-      {/* CONTENU PRINCIPAL */}
       <section className="py-12 px-6 -mt-10 relative z-20">
         <div className="max-w-4xl mx-auto space-y-8">
-          
-          {/* SECTIONS CLASSIQUES (1, 2, 3) */}
           <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100">
             <div className="flex items-center gap-4 mb-6">
               <UserCheck className="text-primary" size={28} />
@@ -73,8 +69,6 @@ const RGPD = () => {
               ))}
             </ul>
           </div>
-
-          {/* VOS DROITS (SANS BOUTON DE CONTACT DIRECT) */}
           <div className="bg-slate-900 p-8 md:p-12 rounded-[4rem] text-white shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
             <div className="flex items-center gap-4 mb-12 relative z-10">
@@ -97,8 +91,6 @@ const RGPD = () => {
               </p>
             </div>
           </div>
-
-          {/* SECTION CONTACT CACHÉE (PROGRESSIVE DISCLOSURE) */}
           <div className="space-y-4">
             <button 
               onClick={() => setShowContact(!showContact)}
@@ -126,8 +118,6 @@ const RGPD = () => {
               </div>
             </div>
           </div>
-
-          {/* LIEN CNIL (DISCRET) */}
           <div className="text-center pt-8">
             <a href="https://www.cnil.fr" target="_blank" rel="noreferrer" className="text-[10px] text-slate-300 hover:text-primary transition-colors uppercase font-black tracking-[0.3em]">
                Autorité de contrôle (CNIL)

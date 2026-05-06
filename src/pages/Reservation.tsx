@@ -106,9 +106,7 @@ const Reservation = () => {
 
   return (
     <div className="bg-slate-50 min-h-screen py-6 md:py-16 px-4 md:px-8 font-sans">
-      <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
-        
-        {/* --- HEADER --- */}
+      <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">        
         <header className="flex flex-col lg:flex-row justify-between items-center gap-6 border-b border-slate-200 pb-8 md:pb-12 text-center lg:text-left">
           <div className="space-y-2">
             <h1 className="text-3xl md:text-6xl font-bold font-serif italic text-slate-950 tracking-tight">Réservation</h1>
@@ -123,8 +121,6 @@ const Reservation = () => {
              </div>
           </div>
         </header>
-
-        {/* --- ÉTAPES --- */}
         <div className="flex items-center justify-center gap-2 md:gap-4">
           {[
             { id: 1, label: 'Dates', icon: <CalendarIcon size={14}/> },
@@ -141,7 +137,6 @@ const Reservation = () => {
         </div>
 
         <main className="max-w-7xl mx-auto">
-          {/* ÉTAPE 1 : CALENDRIER + LÉGENDES */}
           {step === 1 && (
             <div className="space-y-6 md:space-y-8 animate-in fade-in duration-700">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -182,7 +177,6 @@ const Reservation = () => {
             </div>
           )}
 
-          {/* ÉTAPE 2 : PARTICIPANTS + AIDE */}
           {step === 2 && (
             <div className="max-w-5xl mx-auto space-y-6 animate-in slide-in-from-right-10 duration-700">
               <button onClick={() => setStep(1)} className="flex items-center gap-2 text-slate-400 hover:text-primary font-bold text-xs uppercase tracking-widest transition-all">
@@ -211,7 +205,6 @@ const Reservation = () => {
             </div>
           )}
 
-          {/* ÉTAPE 3 : RESPONSABLE + SÉCURITÉ VILLE */}
           {step === 3 && (
             <div className="max-w-3xl mx-auto space-y-6 animate-in slide-in-from-right-10 duration-700">
               <button onClick={() => setStep(2)} className="flex items-center gap-2 text-slate-400 hover:text-primary font-bold text-xs uppercase tracking-widest transition-all">
@@ -234,7 +227,6 @@ const Reservation = () => {
                 )}
 
                 <div className="grid grid-cols-1 gap-6">
-                  {/* SOCIÉTÉ */}
                   <div className="space-y-2">
                     <label className="text-[9px] font-black uppercase text-slate-400 ml-2">Nom de l'entreprise *</label>
                     <div className="relative">
@@ -242,8 +234,7 @@ const Reservation = () => {
                       <input required className="w-full bg-slate-50 border-none rounded-xl md:rounded-2xl pl-12 pr-6 py-4 outline-none text-sm font-bold focus:ring-2 ring-primary/20" placeholder="Ex: SARL Transport Logistique" value={organizer.societe} onChange={(e) => setOrganizer({...organizer, societe: e.target.value})} />
                     </div>
                   </div>
-
-                  {/* VILLE AVEC CORRECTIF onMouseDown */}
+                  
                   <div className="space-y-2 relative">
                     <label className="text-[9px] font-black uppercase text-slate-400 ml-2 flex justify-between">
                       <span>Ville d'implantation *</span>

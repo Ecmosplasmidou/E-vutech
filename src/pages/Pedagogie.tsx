@@ -5,10 +5,8 @@ import { BookOpen, Target, ShieldCheck, ArrowRight, Award, Zap, ChevronRight, Ac
 const Pedagogie = () => {
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans pb-24 selection:bg-primary/20">
-      
-      {/* --- HEADER HERO : FOCUS & CLARITY --- */}
+
       <section className="relative pt-32 pb-48 bg-slate-950 text-white overflow-hidden">
-        {/* Cercles de lumière en arrière-plan */}
         <div className="absolute top-0 right-0 w-[40%] h-full bg-primary/10 -skew-x-12 translate-x-20 blur-[100px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -28,7 +26,6 @@ const Pedagogie = () => {
         </div>
       </section>
 
-      {/* --- SECTION 1: LES PILIERS (BENTO GRID) --- */}
       <section className="px-6 -mt-32 relative z-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
@@ -66,7 +63,6 @@ const Pedagogie = () => {
         </div>
       </section>
 
-      {/* --- SECTION 2: FORMATION-ACTION (MODERN SPLIT) --- */}
       <section className="py-32 px-6 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -108,8 +104,6 @@ const Pedagogie = () => {
                 </div>
               </div>
             </div>
-
-            {/* TIMELINE DE FORMATION */}
             <div className="relative">
               <div className="absolute -inset-10 bg-primary/5 rounded-[5rem] rotate-3 blur-3xl"></div>
               <div className="relative bg-white p-10 md:p-16 rounded-[4rem] shadow-2xl border border-slate-50 space-y-12">
@@ -148,7 +142,6 @@ const Pedagogie = () => {
         </div>
       </section>
 
-      {/* --- CTA FINAL : BOLD & IMMERSIVE --- */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden bg-primary p-12 md:p-24 rounded-[4rem] text-white text-center flex flex-col items-center space-y-10 group">
@@ -171,7 +164,6 @@ const Pedagogie = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

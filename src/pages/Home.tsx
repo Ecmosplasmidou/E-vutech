@@ -13,8 +13,7 @@ import hero_illustration from '../assets/img/Image-camion2.jpg';
 const Home = () => {
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans overflow-x-hidden selection:bg-primary/30">
-      
-      {/* --- SECTION HERO : LUXE & IMPACT --- */}
+
       <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-slate-950">
         <div className="absolute inset-0 z-0">
           <img 
@@ -46,7 +45,6 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 pt-8 justify-center md:justify-start">
-              {/* BOUTON CONTACT : ACTION PRINCIPALE */}
               <Link 
                 to="/contact" 
                 className="group w-full sm:w-auto px-10 py-5 bg-primary text-white rounded-full font-black uppercase text-xs tracking-[0.15em] hover:bg-white hover:text-slate-950 transition-all duration-300 shadow-2xl shadow-primary/40 flex items-center justify-center gap-3 active:scale-95 animate-pulse-subtle"
@@ -54,8 +52,6 @@ const Home = () => {
                 Prendre rendez-vous
                 <MessageSquare className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </Link>
-              
-              {/* BOUTON PROGRAMME : ACTION SECONDAIRE */}
               <Link 
                 to="/conduite-en-vul" 
                 className="w-full sm:w-auto px-10 py-5 bg-white/5 text-white backdrop-blur-md border border-white/10 rounded-full font-black uppercase text-xs tracking-[0.15em] hover:bg-white hover:text-slate-950 transition-all active:scale-95 text-center"
@@ -71,7 +67,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SECTION RESPONSABILITÉ --- */}
       <section className="relative py-24 md:py-32 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative group">
@@ -105,7 +100,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SECTION CERTIFICATIONS --- */}
       <section className="py-24 bg-slate-950 px-6 rounded-[4rem] mx-4 my-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-20 gap-8">
@@ -134,7 +128,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SECTION ENGAGEMENTS --- */}
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto space-y-20">
           <div className="max-w-2xl">
@@ -158,7 +151,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- CTA FINAL : RESTRUCTURÉ POUR LE CONTACT --- */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden bg-primary p-12 md:p-24 rounded-[3rem] md:rounded-[5rem] text-white flex flex-col lg:flex-row items-center justify-between gap-12 group">
@@ -174,12 +166,9 @@ const Home = () => {
             </div>
             
             <div className="flex flex-col gap-4 w-full lg:w-auto relative z-10">
-                {/* CONTACT : DOMINANT */}
                 <Link to='/contact' className="px-12 py-6 bg-slate-950 text-white rounded-full font-black uppercase text-xs tracking-widest hover:bg-white hover:text-slate-950 transition-all duration-500 shadow-2xl text-center flex items-center justify-center gap-3 group/btn">
                   Nous contacter <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
-                
-                {/* PROGRAMME : DISCRET (GLASS) */}
                 <Link to='/conduite-en-vul' className="px-12 py-6 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-black uppercase text-xs tracking-widest hover:bg-white hover:text-slate-950 transition-all text-center">
                   Détail du programme
                 </Link>
@@ -187,8 +176,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* CSS ADDITIONNEL POUR L'ANIMATION PULSE */}
+      
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes pulse-subtle {
           0%, 100% { transform: scale(1); }

@@ -98,7 +98,6 @@ const AdminContacts = () => {
     <div className="min-h-screen bg-slate-50 p-4 md:p-12 font-sans overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col h-[calc(100vh-6rem)]">
         
-        {/* HEADER FIXE */}
         <header className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shrink-0">
           <div>
             <h1 className="text-4xl font-serif italic font-bold text-slate-950">Demandes de Contact</h1>
@@ -118,7 +117,6 @@ const AdminContacts = () => {
           </button>
         </header>
 
-        {/* ZONE DE DÉROULEMENT (SCROLL) */}
         <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar space-y-6 pb-12">
           {contacts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-[3rem] border border-dashed border-slate-200 text-slate-400 italic">

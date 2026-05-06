@@ -40,9 +40,7 @@ const Header = () => {
   return (
     <>
       <header className="sticky top-0 z-[100] bg-white/95 backdrop-blur-md border-b border-slate-100 h-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-          
-          {/* LOGO - Adapté pour ne pas prendre trop de place sur petit écran */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">          
           <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0">
             <img src={logo} alt="Logo" className="h-10 md:h-12 w-auto" />
             <div className="border-l border-slate-200 pl-2 sm:pl-3">
@@ -50,8 +48,6 @@ const Header = () => {
               <p className="hidden xs:block text-[6px] sm:text-[8px] md:text-[9px] text-slate-400 font-bold uppercase mt-1">L’école de la conduite défensive</p>
             </div>
           </Link>
-
-          {/* DESKTOP NAV - Changé de 'md' à 'lg' pour éviter le débordement sur tablette */}
           <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
             {navLinks.map((link) => (
               <Link 
@@ -62,8 +58,6 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
-
-            {/* DROPDOWN CATALOGUE DESKTOP */}
             <div 
               className="relative group py-2"
               onMouseEnter={() => setCatalogOpen(true)}
@@ -109,8 +103,6 @@ const Header = () => {
               Contact
             </Link>
           </nav>
-
-          {/* BURGER BUTTON - S'affiche maintenant sur mobile ET tablette (jusqu'à 1024px) */}
           <button 
             className="lg:hidden relative z-[150] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none" 
             onClick={() => setIsOpen(!isOpen)}
@@ -122,11 +114,7 @@ const Header = () => {
           </button>
         </div>
       </header>
-
-      {/* MOBILE/TABLET OVERLAY */}
       <div className={`fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[110] transition-opacity duration-300 lg:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setIsOpen(false)} />
-
-      {/* MOBILE/TABLET SIDE MENU */}
       <div className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-[120] shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <nav className="flex flex-col pt-24 px-8 space-y-6 h-full overflow-y-auto pb-10 font-sans">
           {navLinks.map((link) => (
@@ -134,8 +122,6 @@ const Header = () => {
               {link.name}
             </Link>
           ))}
-
-          {/* SECTION CATALOGUE MOBILE */}
           <div className="pt-4 border-t border-slate-100 text-left">
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Catalogue</p>
             <div className="space-y-4">

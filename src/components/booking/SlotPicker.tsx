@@ -50,18 +50,15 @@ const SlotPicker = ({ day, onToggle, selectedSlots, occupancy, limit }) => {
               }
             `}
           >
-            {/* Label : Grand sur PC, Lettre sur Mobile */}
             <span className="text-[9px] sm:text-[10px] font-black leading-none">
               <span className="hidden sm:inline">{slot.labelFull}</span>
               <span className="sm:hidden">{slot.labelShort}</span>
             </span>
 
-            {/* Heure : Toujours visible mais minuscule */}
             <span className={`text-[7px] sm:text-[8px] mt-0.5 font-medium ${isSelected ? 'text-white' : 'text-slate-500'}`}>
               {slot.isFull ? 'FULL' : slot.time}
             </span>
 
-            {/* Petit indicateur de statut (Point) */}
             <div className={`absolute top-1 right-1 w-1 h-1 rounded-full ${
               slot.isFull ? 'bg-red-400' : isSelected ? 'bg-primary' : 'bg-emerald-400'
             }`} />

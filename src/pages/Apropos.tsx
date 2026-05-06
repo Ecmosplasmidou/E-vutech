@@ -14,9 +14,7 @@ const APropos = () => {
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans overflow-x-hidden selection:bg-primary/20">
       
-      {/* --- HEADER HERO : L'IDENTITÉ --- */}
       <section className="relative pt-32 pb-48 bg-slate-950 text-white overflow-hidden">
-        {/* Gradients de fond signature */}
         <div className="absolute top-0 right-0 w-[50%] h-full bg-primary/10 -skew-x-12 translate-x-32 blur-[100px] pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -36,11 +34,9 @@ const APropos = () => {
         </div>
       </section>
 
-      {/* --- SECTION 1: ÉVOLUTION & CHIFFRE CHOC (BENTO STYLE) --- */}
       <section className="px-6 -mt-32 relative z-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Texte principal */}
           <div className="lg:col-span-7 bg-white p-10 md:p-16 rounded-[3rem] shadow-xl shadow-slate-200/50 flex flex-col justify-center space-y-8 border border-slate-100">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-5xl font-bold text-slate-950 font-serif italic leading-tight">Mutation des usages</h2>
@@ -68,7 +64,6 @@ const APropos = () => {
             </div>
           </div>
 
-          {/* Cartes Stats */}
           <div className="lg:col-span-5 grid gap-8">
             <div className="bg-slate-950 rounded-[3rem] p-10 flex flex-col justify-center items-center text-center group overflow-hidden relative">
               <TrendingUp className="w-16 h-16 text-primary mb-6 group-hover:scale-110 transition-transform duration-500" />
@@ -89,7 +84,6 @@ const APropos = () => {
         </div>
       </section>
 
-      {/* --- SECTION 2: CONQUÉQUENCES (TAGS MODERNES) --- */}
       <section className="py-32 px-6">
         <div className="max-w-5xl mx-auto text-center space-y-12">
           <div className="space-y-4">
@@ -110,7 +104,6 @@ const APropos = () => {
         </div>
       </section>
 
-      {/* --- SECTION 3: RESPONSABILITÉ (DARK BOX) --- */}
       <section className="py-24 px-6 bg-white rounded-[4rem] mx-4 shadow-2xl shadow-slate-200/50">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-10">
@@ -147,7 +140,6 @@ const APropos = () => {
         </div>
       </section>
 
-      {/* --- SECTION E-VUTECH (CTA STYLE) --- */}
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden bg-primary p-12 md:p-24 rounded-[5rem] text-white flex flex-col items-center text-center space-y-10 group shadow-2xl shadow-primary/30">

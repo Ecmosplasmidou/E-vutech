@@ -58,7 +58,7 @@ const Contact = () => {
 
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans pb-10 md:pb-20 selection:bg-primary/20">
-      {/* Header Section */}
+      
       <section className="relative pt-24 md:pt-32 pb-32 md:pb-48 bg-slate-950 text-white overflow-hidden">
         <div className="absolute top-0 right-0 w-full md:w-[50%] h-full bg-primary/10 -skew-x-12 translate-x-16 md:translate-x-32 blur-[60px] md:blur-[100px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center lg:text-left">
@@ -75,12 +75,10 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Main Content Section */}
       <section className="px-4 md:px-6 -mt-20 md:-mt-32 relative z-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8 md:gap-12 items-start">
-            
-            {/* Sidebar Info */}
+
             <div className="lg:col-span-1 space-y-6 md:space-y-8 lg:sticky lg:top-24">
               <div className="bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-slate-100 space-y-6 md:space-y-8">
                 <div>
@@ -110,7 +108,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Form Column */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-[2.5rem] md:rounded-[3.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-slate-100 p-6 md:p-12 lg:p-16 relative overflow-hidden">
                 {isSuccess ? (
@@ -122,7 +119,6 @@ const Contact = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-8 md:space-y-10">
-                    {/* Profil Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                       <div className="md:col-span-2">
                         <h3 className="flex items-center gap-3 text-slate-950 font-serif italic text-lg md:text-xl mb-2"><span className="h-px w-6 md:w-8 bg-primary"></span> Votre Profil</h3>
@@ -154,8 +150,6 @@ const Contact = () => {
                         <input type="text" name="nom" required value={formData.nom} onChange={handleChange} className="input-modern" placeholder="Ex: Dupont" />
                       </div>
                     </div>
-
-                    {/* Contact Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 pt-4 md:pt-6">
                       <div className="md:col-span-2"><h3 className="flex items-center gap-3 text-slate-950 font-serif italic text-lg md:text-xl mb-2"><span className="h-px w-6 md:w-8 bg-primary"></span> Contact & Localisation</h3></div>
                       <div className="space-y-2"><label className="text-[9px] md:text-[10px] font-black uppercase text-slate-400 tracking-widest">Entité</label><input type="text" name="entite" value={formData.entite} onChange={handleChange} className="input-modern" placeholder="Structure" /></div>
@@ -166,7 +160,6 @@ const Contact = () => {
                       <div className="space-y-2"><label className="text-[9px] md:text-[10px] font-black uppercase text-slate-400 tracking-widest">Code Postal *</label><input type="text" name="codePostal" required value={formData.codePostal} onChange={handleChange} className="input-modern" /></div>
                     </div>
 
-                    {/* Message Section */}
                     <div className="space-y-3 pt-4 md:pt-6">
                       <label className="text-[9px] md:text-[10px] font-black uppercase text-slate-400 tracking-widest flex items-center gap-2"><MessageSquare size={14} /> Message : *</label>
                       <textarea name="message" required rows={5} value={formData.message} onChange={handleChange} className="input-modern resize-none" placeholder="Votre projet..."></textarea>

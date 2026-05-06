@@ -44,7 +44,6 @@ const Catalogue = () => {
 
   return (
     <div className="bg-[#fcfcfd] min-h-screen font-sans pb-20">
-      {/* HEADER DE LA FORMATION */}
       <section className="bg-slate-900 text-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
@@ -75,7 +74,6 @@ const Catalogue = () => {
         </div>
       </section>
 
-      {/* CONTENU DES SOCLES */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
@@ -101,7 +99,6 @@ const Catalogue = () => {
             ))}
           </div>
 
-          {/* BOUTON TELECHARGEMENT */}
           <div className="mt-20 flex flex-col items-center">
             <div className="bg-primary/5 p-10 rounded-[3rem] border-2 border-dashed border-primary/20 text-center max-w-2xl">
               <h3 className="text-2xl font-bold text-slate-900 mb-4 font-serif italic">Prêt à former vos équipes ?</h3>

@@ -58,7 +58,6 @@ const FAQ = () => {
   return (
     <div className="bg-[#fcfcfd] min-h-screen font-sans">
       
-      {/* HEADER AVEC DÉGRADÉ DYNAMIQUE */}
       <section className="relative py-24 px-6 text-white text-center overflow-hidden bg-gradient-to-br from-[#4a86C6] via-[#3b71ab] to-[#2d5a8a]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -78,7 +77,6 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* LISTE DES ACCORDÉONS */}
       <section className="py-16 px-6 -mt-10 relative z-20">
         <div className="max-w-3xl mx-auto">
           <div className="flex flex-col">
@@ -89,7 +87,6 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* CTA SECTION (SOMBRE) */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-slate-900 rounded-[3.5rem] p-10 md:p-16 text-white relative overflow-hidden shadow-2xl">
@@ -109,9 +106,7 @@ const FAQ = () => {
               >
                 Poser une question
               </Link>
-            </div>
-            
-            {/* Décoration subtile */}
+            </div>            
             <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full -mr-40 -mt-40 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-60 h-60 bg-primary/5 rounded-full -ml-30 -mb-30 blur-2xl"></div>
           </div>
